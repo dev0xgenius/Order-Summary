@@ -1,0 +1,121 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+// primary color-scheme
+$paleBlue: hsl(225, 100%, 94%);
+$brightBlue: hsl(245, 75%, 52%);
+
+// Neutral Colors
+$veryPaleBlue: hsl(225, 100%, 98%);
+$desaturatedBlue: hsl(224, 23%, 55%);
+$darkBlue: hsl(223, 47%, 23%);
+
+img {
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url('/images/pattern-background-desktop.svg');
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  body { 
+    background-image: url('/images/pattern-background-mobile.svg');
+    background-size: cover;
+  }
+}
+
+main {
+  width: min-content;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 50px hsla(245, 75%, 52%, 0.2);
+  background: $veryPaleBlue;
+  
+  .order-summary {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    text-align: center;
+    
+    h1 {
+      font-size: 1.5em;
+      font-weight: 900;
+      color: $darkBlue;
+      margin: 30px 0;
+      margin-top: 0;
+    }
+    p { 
+      color: $desaturatedBlue;
+      line-height: 1.5;
+    }
+  }
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: hsla(225, 100%, 94%, 0.4);
+  
+  .info {
+    display: flex;
+    align-items: center;
+    /* line-height: 1.5; */
+    gap: 20px;
+    span { display: block; 
+      color: $desaturatedBlue;
+      font-size: 16px;
+    }
+    span:first-child {
+      font-weight: 700; 
+      color: $darkBlue;
+    }
+    img { width: 64px; }
+  }
+}
+
+.order-summary .action {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  a {
+    width: 100%;
+    padding: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+    text-decoration: none;
+    color: $desaturatedBlue;
+    
+    &:hover, &:active{
+      opacity: .5;
+      cursor: crosshair;
+    }
+  }
+  a.pay { color: $veryPaleBlue;
+    background-color: $brightBlue;
+    box-shadow: 5px 15px 15px hsla(245, 75%, 52%, 0.2);
+  }
+  
+  a.cancel:hover {
+    opacity: 1;
+    color: $darkBlue;
+  }
+}

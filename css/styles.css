@@ -1,0 +1,112 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+img {
+  display: block;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url("/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url("/images/pattern-background-mobile.svg");
+    background-size: cover;
+  }
+}
+main {
+  width: min-content;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 50px hsla(245, 75%, 52%, 0.2);
+  background: hsl(225, 100%, 98%);
+}
+main .order-summary {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  text-align: center;
+}
+main .order-summary h1 {
+  font-size: 1.5em;
+  font-weight: 900;
+  color: hsl(223, 47%, 23%);
+  margin: 30px 0;
+  margin-top: 0;
+}
+main .order-summary p {
+  color: hsl(224, 23%, 55%);
+  line-height: 1.5;
+}
+
+.plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: hsla(225, 100%, 94%, 0.4);
+}
+.plan .info {
+  display: flex;
+  align-items: center;
+  /* line-height: 1.5; */
+  gap: 20px;
+}
+.plan .info span {
+  display: block;
+  color: hsl(224, 23%, 55%);
+  font-size: 16px;
+}
+.plan .info span:first-child {
+  font-weight: 700;
+  color: hsl(223, 47%, 23%);
+}
+.plan .info img {
+  width: 64px;
+}
+
+.order-summary .action {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.order-summary .action a {
+  width: 100%;
+  padding: 20px;
+  font-weight: 700;
+  border-radius: 20px;
+  text-decoration: none;
+  color: hsl(224, 23%, 55%);
+}
+.order-summary .action a:hover, .order-summary .action a:active {
+  opacity: 0.5;
+  cursor: crosshair;
+}
+.order-summary .action a.pay {
+  color: hsl(225, 100%, 98%);
+  background-color: hsl(245, 75%, 52%);
+  box-shadow: 5px 15px 15px hsla(245, 75%, 52%, 0.2);
+}
+.order-summary .action a.cancel:hover {
+  opacity: 1;
+  color: hsl(223, 47%, 23%);
+}
+
+/*# sourceMappingURL=styles.css.map */
